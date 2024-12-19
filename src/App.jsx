@@ -2,8 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Home/Navbar';
 import Footer from './components/Home/Footer';
-import Home from './components/Home/Home'; // Create a Home.jsx to group all home sections
-import About from './components/About/About';
+import Home from './Pages/HomePage'; // Create a Home.jsx to group all home sections
+import About from './Pages/AboutPage';
 import Contact from './components/Home/Contact';
 
 function App() {

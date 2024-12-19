@@ -40,10 +40,10 @@ export default function SpecialtiesSection() {
     <section className="py-16 px-4 bg-[#edf3f6]">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl text-[#0a2351] mb-4">
+          <h2 className="text-3xl md:text-[32px] text-[#0a2351] mb-4">
             Our Specialties
           </h2>
-          <p className="text-gray-600 text-lg">
+          <p className="text-[#636571] text-[16px]">
             Empowering Healthcare Providers in Their Financial Journey
           </p>
         </div>
@@ -90,7 +90,7 @@ export default function SpecialtiesSection() {
                     <specialty.icon className="w-12 h-12 text-[#02bdd5]" />
                   </motion.div>
                   <motion.h3 
-                    className="text-xl font-semibold text-[#0a2351]"
+                    className="text-[14.4px] font-semibold text-[#002345]"
                     variants={{
                       hover: {
                         color: "#ffffff",
@@ -101,7 +101,7 @@ export default function SpecialtiesSection() {
                     {specialty.title}
                   </motion.h3>
                   <motion.p 
-                    className="text-gray-700"
+                    className="text-[#7A7A7A] text-[16px]"
                     variants={{
                       hover: {
                         color: "#ffffff",

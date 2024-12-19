@@ -47,10 +47,10 @@ export default function AnimatedCards() {
 
             {/* Content */}
             <div className="relative z-10 text-center">
-              <h3 className="text-3xl font-semibold text-[#1dbfcc] group-hover:text-white mb-4">
+              <h3 className="text-[24px] font-semibold text-[#1dbfcc] group-hover:text-white mb-4">
                 {card.title}
               </h3>
-              <p className="text-gray-600 group-hover:text-white">
+              <p className="text-[#121212] text-[15px] group-hover:text-white">
                 {card.description}
               </p>
             </div>

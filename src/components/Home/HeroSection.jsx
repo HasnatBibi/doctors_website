@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function HeroSection() {
   return (
-    <div className="relative bg-[#002147] min-h-screen w-full overflow-hidden">
+    <div className="relative bg-[#002147] min-h-700 w-full overflow-hidden">
       {/* Background image covering the lower-right corner */}
       <div
         className="absolute inset-0 bg-no-repeat bg-cover bg-right opacity-30"
@@ -10,14 +10,14 @@ export default function HeroSection() {
       ></div>
 
       {/* Content Section */}
-      <div className="w-full px-4 lg:px-36 py-20 relative z-10">
+      <div className="w-full px-4 lg:px-36 py-10 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           {/* Content Column */}
           <div className="text-white space-y-8 items-start">
-            <h1 className="text-4xl md:text-5xl lg:text-7xl leading-tight">
+            <h1 className="text-[40px] md:text-5xl lg:text-[40px] font-custom">
               Secure and Compliant Medical Billing Services
             </h1>
-            <p className="text-white text-xl">
+            <p className="text-white text-[16px]">
               Why let medical billing stress you out and take time away from patient care? Let us alleviate your burden. As a leading medical billing outsourcing company, we offer cost-effective solutions to streamline your administrative tasks. Whether you need focused support in certain areas or comprehensive billing services, we're here to simplify your workload.
             </p>
             <button className="px-8 py-4 bg-[#1dbfcc] text-white rounded-md hover:bg-[#ffc567] hover:text-black transition-colors duration-300">

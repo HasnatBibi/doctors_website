@@ -4,10 +4,10 @@ import Newbilnow from '../../assets/new-logo-white.svg';
 export default function Footer() {
   return (
     <footer className="bg-[#002345] text-white py-12">
-      <div className="container mx-auto px-36">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
+      <div className="container mx-auto px-6 sm:px-12 lg:px-36">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
           {/* Logo Section */}
-          <div className="md:col-span-1">
+          <div className="mb-6 sm:mb-0">
             <div className="mb-4">
               <img
                 src={Newbilnow}
@@ -16,16 +16,16 @@ export default function Footer() {
                 height={50}
                 className="mb-6"
               />
-              <p className="text-gray-300">
+              <p className="text-white text-[14px] sm:text-[16px]">
                 BILNOW is your ultimate partner for seamless medical billing solutions
               </p>
             </div>
           </div>
 
           {/* Services Section */}
-          <div className="md:col-span-1">
-            <h3 className="text-2xl font-semibold mb-4">Services</h3>
-            <ul className="space-y-2">
+          <div className="mb-6 sm:mb-0">
+            <h3 className="text-[20px] sm:text-[22px] font-semibold mb-4">Services</h3>
+            <ul className="space-y-2 text-[14px] sm:text-[16px]">
               <li><a href="#" className="hover:text-[#22d3ee] transition-colors">RCM</a></li>
               <li><a href="#" className="hover:text-[#22d3ee] transition-colors">Medical Billing</a></li>
               <li><a href="#" className="hover:text-[#22d3ee] transition-colors">Credentialing</a></li>
@@ -37,9 +37,9 @@ export default function Footer() {
           </div>
 
           {/* Specialties Section */}
-          <div className="md:col-span-1">
-            <h3 className="text-2xl font-semibold mb-4">Specialties</h3>
-            <ul className="space-y-2">
+          <div className="mb-6 sm:mb-0">
+            <h3 className="text-[20px] sm:text-[22px] font-semibold mb-4">Specialties</h3>
+            <ul className="space-y-2 text-[14px] sm:text-[16px]">
               <li><a href="#" className="hover:text-[#22d3ee] transition-colors">Internal Medicine Billing</a></li>
               <li><a href="#" className="hover:text-[#22d3ee] transition-colors">Dermatology Billing</a></li>
               <li><a href="#" className="hover:text-[#22d3ee] transition-colors">Nephrology Billing</a></li>
@@ -51,9 +51,9 @@ export default function Footer() {
           </div>
 
           {/* Helpful Links Section */}
-          <div className="md:col-span-1">
-            <h3 className="text-2xl font-semibold mb-4">Helpful Link</h3>
-            <ul className="space-y-2">
+          <div className="mb-6 sm:mb-0">
+            <h3 className="text-[20px] sm:text-[22px] font-semibold mb-4">Helpful Links</h3>
+            <ul className="space-y-2 text-[14px] sm:text-[16px]">
               <li><a href="#" className="hover:text-[#22d3ee] transition-colors">About Us</a></li>
               <li><a href="#" className="hover:text-[#22d3ee] transition-colors">Blogs</a></li>
               <li><a href="#" className="hover:text-[#22d3ee] transition-colors">Privacy Policy</a></li>
@@ -62,14 +62,14 @@ export default function Footer() {
           </div>
 
           {/* Contact Section */}
-          <div className="md:col-span-1">
-            <h3 className="text-2xl font-semibold mb-4">Contact Us</h3>
+          <div>
+            <h3 className="text-[20px] sm:text-[22px] font-semibold mb-4">Contact Us</h3>
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
                 <input
                   type="email"
                   placeholder="Your Email Address"
-                  className="p-2 rounded bg-white text-gray-800 w-full"
+                  className="p-2 rounded bg-white text-gray-800 w-full sm:w-auto"
                 />
                 <button className="bg-[#22d3ee] text-white px-4 py-2 rounded hover:bg-[#0891b2] transition-colors min-w-[100px]">
                   Sign Up

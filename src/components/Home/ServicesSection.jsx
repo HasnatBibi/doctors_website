@@ -39,7 +39,7 @@ const ServicesSection = () => {
   return (
     <div className="bg-[#edf3f6] py-16 relative">
       <div className="max-w-6xl mx-auto px-4">
-        <h1 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">
+        <h1 className="text-3xl md:text-[32px]  text-center mb-12 text-[#002345]">
           Achieve Optimal Reimbursements for Your Claims
         </h1>
         
@@ -70,13 +70,13 @@ const ServicesSection = () => {
                   </div>
                   
                   <div className="flex-grow">
-                    <h3 className="text-2xl font-semibold text-[#002147] mb-2 mt-2">
+                    <h3 className="text-[23px] text-[#002147] mb-2 mt-2">
                       {service.title}
                     </h3>
                   </div>
                 </div>
                 
-                <p className="text-[#002147] mb-4 flex-grow">
+                <p className="text-[#002147] mb-4 flex-grow text-[16px]">
                   {service.description}
                 </p>
                 

@@ -18,7 +18,7 @@ const BillingPartners = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-3xl md:text-4xl text-center mb-12"
+          className="text-[32px] md:text-4xl text-center mb-12 text-[#002345]"
         >
           BILNOW: Your Certified Medical Billing Partner
         </motion.h2>

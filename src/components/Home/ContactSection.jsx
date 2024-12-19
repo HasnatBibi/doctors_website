@@ -45,13 +45,9 @@ const ContactSection = () => {
       <div className="relative z-10 container mx-auto px-4 py-16">
         {/* Header content */}
         <div className="text-center text-white mb-12">
-          <h1 className="text-4xl font-bold mb-4">
-            Request Your Free Billing Audit & Quote Today.
-          </h1>
-          <p className="text-xl mb-8">
-            Top Medical Billing Company in United States Get Quick Quote!
-          </p>
-          <div className="flex justify-center flex-col gap-4">
+          <h1 className="text-[32px] mb-4">Request Your Free Billing Audit & Quote Today.</h1>
+          <p className="text-[16px] mb-8">Top Medical Billing Company in United States Get Quick Quote!</p>
+          <div className="flex justify-center flex-col gap-4 text-[16px]">
             <div className="flex items-center justify-center">
               <FaEnvelope className="mr-2 text-black" />
               info@bilnow.com
@@ -64,10 +60,10 @@ const ContactSection = () => {
         </div>
 
         {/* Form and Image container */}
-        <div className="flex justify-center gap-8 max-w-7xl mx-auto">
+        <div className="flex flex-col md:flex-row justify-center gap-8 max-w-7xl mx-auto">
           {/* Form */}
-          <div className="w-[40%] bg-white rounded-lg shadow-xl p-8">
-            <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
+          <div className="w-full md:w-[40%] bg-white rounded-lg shadow-xl p-8">
+            <h2 className="text-[24px] font-bold text-[#000000] mb-6 text-center">
               Looking for Revenue Impact?
             </h2>
             <form onSubmit={handleSubmit} className="space-y-4">
@@ -126,7 +122,7 @@ const ContactSection = () => {
                     onChange={handleChange}
                     className="mt-1"
                   />
-                  <span className="text-md text-gray-600">
+                  <span className="text-[16px] text-[#7A7A7A]">
                     I acknowledge that I have read and agree to BilNow LLC{' '}
                     <a href="#" className="text-[#cc3366]">Privacy Policy</a> and{' '}
                     <a href="#" className="text-[#cc3366]">terms and conditions</a>.
@@ -140,7 +136,7 @@ const ContactSection = () => {
                     onChange={handleChange}
                     className="mt-1"
                   />
-                  <span className="text-md text-gray-600">
+                  <span className="text-[16px] text-[#7A7A7A]">
                     By checking this box I agree to receive SMS updates specifically related to Medical Billing Services
                   </span>
                 </label>
@@ -159,7 +155,7 @@ const ContactSection = () => {
           </div>
 
           {/* Image */}
-          <div className="w-[40%]">
+          <div className="w-full md:w-[40%]">
             <picture>
               <source srcSet="../src/assets/contact-img.webp" type="image/webp" />
               <img

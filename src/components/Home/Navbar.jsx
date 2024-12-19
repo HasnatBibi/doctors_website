@@ -1,106 +1,304 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaChevronDown } from 'react-icons/fa'
+import React, { useState, useEffect } from "react";
+import {
+  FaPhone,
+  FaEnvelope,
+  FaMapMarkerAlt,
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedinIn,
+  FaChevronDown,
+  FaBars,
+  FaTimes,
+} from "react-icons/fa";
 
-export default function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false)
+const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeDropdowns, setActiveDropdowns] = useState({
+    about: false,
+    service: false,
+  });
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 100)
-    }
+      if (window.scrollY > 100) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
 
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+    if (!isMobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "visible";
+    }
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+    setActiveDropdowns({ about: false, service: false });
+    document.body.style.overflow = "visible";
+  };
+
+  const toggleDropdown = (dropdown) => {
+    setActiveDropdowns((prev) => ({
+      ...prev,
+      [dropdown]: !prev[dropdown],
+    }));
+  };
 
   return (
-    <header className="relative w-full">
-      {/* Top Bar */}
-      <div className="top-0 left-0 w-full bg-[#002147] z-10">
-  <div className="flex w-full">
-    {/* Logo section (30% width) */}
-    <div className="w-[30%] bg-white flex items-end justify-end p-16">
-      <img
-        src="../src/assets/billnow-logo.svg"
-        alt="Billnow Logo"
-        className="h-28 w-auto" 
-      />
-    </div>
-    {/* Contact info section (70% width) */}
-    <div className="w-[70%] bg-[#002147] flex items-center justify-center p-4">
-      <div className="flex justify-center items-center space-x-10 text-[#FFB800]">
-        <a href="mailto:info@bilnow.com" className="flex items-center hover:text-[#FFD700] transition-colors">
-          <FaEnvelope className="mr-2 text-lg" />
-          info@bilnow.com
-        </a>
-        <a href="tel:7187018169" className="flex items-center hover:text-[#FFD700] transition-colors">
-          <FaPhone className="mr-2 text-lg" />
-          718 701 8169
-        </a>
-        <span className="flex items-center">
-          <FaMapMarkerAlt className="mr-2 text-lg" />
-          407 Rockaway Ave, Brooklyn, NY 11212
-        </span>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-      {/* Main Navigation - Floating */}
-      <nav
-  className={`w-full ${isScrolled ? 'fixed top-0 left-0 right-0' : 'absolute -bottom-10'} transition-all duration-300 z-50`}
->
-  <div className="w-full px-4 lg:px-32">
-    <div className="bg-white shadow-lg">
-      <div className="flex justify-between items-center py-4 px-16">
-        {/* Navigation items */}
-        <div className="flex space-x-12">
-          {['Home', 'About Us', 'Services', 'Specialties', 'Blogs', 'Contact Us'].map((item) => (
-            <div key={item} className="relative group">
-              <Link
-                to={
-                  item === 'Home'
-                    ? '/' // Navigate to the Home page
-                    : `/${item.toLowerCase().replace(/\s+/g, '-')}` // Dynamically create paths for other pages
-                }
-                className="text-[#002147] hover:text-[#00BFB3] transition-colors py-2 flex items-center"
-              >
-                {item}
-                {['Services', 'Specialties'].includes(item) && (
-                  <FaChevronDown className="ml-1 text-xs" />
-                )}
-              </Link>
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#00BFB3] transition-all duration-300 group-hover:w-full" />
-              {/* Dropdown menu */}
-              {['Services', 'Specialties'].includes(item) && (
-                <div className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                  <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-                    Submenu Item 1
-                  </a>
-                  <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-                    Submenu Item 2
-                  </a>
-                  <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-                    Submenu Item 3
-                  </a>
-                </div>
-              )}
-            </div>
-          ))}
+    <header
+      className={`w-full bg-white shadow-md z-50 transition-all duration-300 ${
+        isScrolled ? "fixed top-0" : "relative"
+      }`}
+    >
+      {/* Top Bar with Contact Info */}
+      <div className="container mx-auto px-4 lg:px-24 py-4 flex flex-col lg:flex-row justify-between items-center">
+        {/* Logo */}
+        <div className="flex items-center mb-4 lg:mb-0">
+          <img
+            src="/src/assets/billnow-logo.svg"
+            alt=""
+            className="h-16 w-16"
+          />
         </div>
-        {/* Request Demo button */}
-        <button className="px-6 py-3 bg-[#1dbfcc] text-white rounded-0 relative overflow-hidden group">
-          <span className="relative z-10">Request Demo</span>
-        </button>
+
+        {/* Contact Information */}
+        {/* Contact Information */}
+        <div className="hidden lg:flex flex-col lg:flex-row items-center space-y-2 lg:space-y-0 lg:space-x-12">
+          <div className="flex items-center gap-4">
+            <FaPhone className="text-[#1dbfcc]" />
+            <span>7187018169</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <FaEnvelope className="text-[#1dbfcc]" />
+            <span>Info@bilnow.comwnintltravels.com</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <FaMapMarkerAlt className="text-[#1dbfcc]" />
+            <span>407 Rockaway Ave, Brooklyn, NY 11212</span>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</nav>
 
+      {/* Horizontal Line */}
+      <div className="border-b border-gray-200"></div>
+
+      {/* Main Navigation */}
+      <div className="container mx-auto px-4 lg:px-24">
+        <nav className="flex justify-between items-center h-16">
+          {/* Mobile Menu Button */}
+          <button
+            className={`lg:hidden text-black p-2 z-50 ${
+              isMobileMenuOpen ? "fixed top-4 right-4" : ""
+            }`}
+            onClick={toggleMobileMenu}
+            aria-label="Toggle mobile menu"
+          >
+            {isMobileMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+          </button>
+
+          {/* Navigation Links */}
+          <div
+            className={`fixed inset-0 bg-white z-40 transform transition-transform duration-300 ease-in-out ${
+              isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
+            } lg:relative lg:inset-auto lg:transform-none lg:transition-none lg:bg-transparent lg:flex lg:items-center lg:justify-between lg:flex-1`}
+          >
+            <div className="h-full overflow-y-auto lg:h-auto lg:overflow-visible lg:flex lg:items-center">
+              <ul className="flex flex-col lg:flex-row items-start lg:items-center space-y-4 lg:space-y-0 lg:space-x-10 p-6 lg:p-0">
+                <li>
+                  <a
+                    href="/"
+                    className="text-[#002345] font-bold hover:text-[#1dbfcc] text-lg lg:text-base"
+                    onClick={closeMobileMenu}
+                  >
+                    Home
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/about-us"
+                    className="text-[#002345] font-bold hover:text-[#1dbfcc] text-lg lg:text-base"
+                    onClick={closeMobileMenu}
+                  >
+                    About Us
+                  </a>
+                </li>
+                <li className="relative w-full lg:w-auto">
+                  <button
+                    className="flex items-center justify-between w-full font-bold text-[#002345] hover:text-[#1dbfcc] text-lg lg:text-base"
+                    onClick={() => toggleDropdown("about")}
+                    onMouseEnter={() =>
+                      window.innerWidth > 1024 &&
+                      setActiveDropdowns((prev) => ({ ...prev, about: true }))
+                    }
+                    onMouseLeave={() =>
+                      window.innerWidth > 1024 &&
+                      setActiveDropdowns((prev) => ({ ...prev, about: false }))
+                    }
+                  >
+                    Services
+                    <FaChevronDown
+                      className={`ml-1 h-3 w-3 transform transition-transform duration-200 ${
+                        activeDropdowns.about ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+                  <ul
+                    className={`mt-2 space-y-2 lg:absolute lg:left-0 lg:bg-white lg:shadow-lg lg:mt-2 lg:py-2 lg:w-48 lg:z-10 transition-all duration-200 ${
+                      activeDropdowns.about
+                        ? "max-h-48 opacity-100 visible"
+                        : "max-h-0 opacity-0 invisible lg:max-h-48"
+                    }`}
+                    onMouseEnter={() =>
+                      window.innerWidth > 1024 &&
+                      setActiveDropdowns((prev) => ({ ...prev, about: true }))
+                    }
+                    onMouseLeave={() =>
+                      window.innerWidth > 1024 &&
+                      setActiveDropdowns((prev) => ({ ...prev, about: false }))
+                    }
+                  >
+                    <li>
+                      <a
+                        href="#"
+                        className="block px-4 py-2 hover:bg-[#1dbfcc]"
+                        onClick={closeMobileMenu}
+                      >
+                        Medical Coding
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        className="block px-4 py-2 hover:bg-[#1dbfcc]"
+                        onClick={closeMobileMenu}
+                      >
+                        Denial Management
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li className="relative w-full lg:w-auto">
+                  <button
+                    className="flex items-center justify-between w-full font-bold text-[#002345] hover:text-[#1dbfcc] text-lg lg:text-base"
+                    onClick={() => toggleDropdown("service")}
+                    onMouseEnter={() =>
+                      window.innerWidth > 1024 &&
+                      setActiveDropdowns((prev) => ({ ...prev, service: true }))
+                    }
+                    onMouseLeave={() =>
+                      window.innerWidth > 1024 &&
+                      setActiveDropdowns((prev) => ({
+                        ...prev,
+                        service: false,
+                      }))
+                    }
+                  >
+                    Specialities
+                    <FaChevronDown
+                      className={`ml-1 h-3 w-3 transform transition-transform duration-200 ${
+                        activeDropdowns.service ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+                  <ul
+                    className={`mt-2 space-y-2 lg:absolute lg:left-0 lg:bg-white lg:shadow-lg lg:mt-2 lg:py-2 lg:w-48 lg:z-10 transition-all duration-200 ${
+                      activeDropdowns.service
+                        ? "max-h-48 opacity-100 visible"
+                        : "max-h-0 opacity-0 invisible lg:max-h-48"
+                    }`}
+                    onMouseEnter={() =>
+                      window.innerWidth > 1024 &&
+                      setActiveDropdowns((prev) => ({ ...prev, service: true }))
+                    }
+                    onMouseLeave={() =>
+                      window.innerWidth > 1024 &&
+                      setActiveDropdowns((prev) => ({
+                        ...prev,
+                        service: false,
+                      }))
+                    }
+                  >
+                    <li>
+                      <a
+                        href="#"
+                        className="block px-4 py-2 hover:bg-[#1dbfcc]"
+                        onClick={closeMobileMenu}
+                      >
+                        Internal Medicine Billing
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        className="block px-4 py-2 hover:bg-[#1dbfcc]"
+                        onClick={closeMobileMenu}
+                      >
+                        Mental Billing
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a
+                    href="/gallery"
+                    className="text-[#002345] font-bold hover:text-[#1dbfcc] text-lg lg:text-base"
+                    onClick={closeMobileMenu}
+                  >
+                    Blogs
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/appointment"
+                    className="text-[#002345] font-bold hover:text-[#1dbfcc] text-lg lg:text-base"
+                    onClick={closeMobileMenu}
+                  >
+                    Contact Us
+                  </a>
+                </li>
+                
+              </ul>
+            </div>
+          </div>
+
+          {/* Social Icons and CTA for both mobile and desktop */}
+          <div className="flex items-center space-x-8">
+            <a
+              href="#"
+              className="text-[#002147] hover:text-[#1dbfcc] transition-colors duration-300"
+            >
+              <FaFacebookF size={20} />
+            </a>
+            <a
+              href="#"
+              className="text-[#002147] hover:text-[#1dbfcc] transition-colors duration-300"
+            >
+              <FaInstagram size={20} />
+            </a>
+            <a
+              href="#"
+              className="text-[#002147] hover:text-[#1dbfcc] transition-colors duration-300"
+            >
+              <FaLinkedinIn size={20} />
+            </a>
+            <button className="bg-[#1dbfcc] text-white px-6 py-2 rounded hover:bg-[#ffc567] transition duration-300 text-md">
+              Request Demo
+            </button>
+          </div>
+        </nav>
+      </div>
     </header>
-  )
-}
+  );
+};
 
+export default Navbar;

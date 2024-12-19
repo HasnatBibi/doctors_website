@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 const WhoWeAre = () => {
   return (
     <section className="py-20 bg-white">
-      <div className="container mx-auto px-36">
+      <div className="container mx-auto px-4 sm:px-8 md:px-16 lg:px-36">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Image */}
           <motion.div
@@ -11,7 +11,7 @@ const WhoWeAre = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="relative h-[500px]"
+            className="relative h-[300px] md:h-[500px]"
           >
             <img
               src="/src/assets/WhoWeAre.webp"
@@ -19,6 +19,7 @@ const WhoWeAre = () => {
               className="rounded-lg shadow-xl w-full h-full object-cover"
             />
           </motion.div>
+          
           {/* Content */}
           <motion.div
             initial={{ opacity: 0, x: 50 }} // Start from right (50)
@@ -26,14 +27,16 @@ const WhoWeAre = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Who We Are</h2>
-            <p className="text-gray-600 leading-relaxed mb-8">
+            <h2 className="text-2xl md:text-3xl lg:text-[38px] font-bold mb-6 text-[#002345]">
+              Who We Are
+            </h2>
+            <p className="text-[#000000] leading-relaxed mb-8 text-sm sm:text-base lg:text-[16px]">
               BilNow is one of the leading medical billing companies, offering smart RCM solutions 
               backed by advanced technology to modernize outdated and manual administrative tasks 
               for healthcare organizations of all sizes. With over a decade of industry experience, 
               we understand the challenges and complications of the medical billing process.
             </p>
-            <p className="text-gray-600 leading-relaxed mb-8">
+            <p className="text-[#000000] leading-relaxed mb-8 text-sm sm:text-base lg:text-[16px]">
               Experts at BilNow integrate comprehensive revenue cycle management solutions to streamline 
               operations, simplify decision-making, and ensure compliance with industry standards-helping 
               you save resources by reducing manual tasks and time spent on billing while achieving 

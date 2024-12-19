@@ -3,12 +3,12 @@ import { FiPhoneCall } from 'react-icons/fi'; // Make sure to import the correct
 export default function Contact() {
   return (
     <div className="w-full bg-[#1dbfcc] py-8">
-      <div className="container mx-auto px-36">
+      <div className="container mx-auto px-6 md:px-36">
         {/* Flex container without gaps */}
-        <div className="flex flex-col md:flex-row items-center md:items-start">
+        <div className="flex flex-col md:flex-row items-center md:items-start space-y-8 md:space-y-0">
           {/* Left Column */}
-          <div className="text-white md:mr-12"> {/* Add margin-right for spacing */}
-            <h2 className="text-3xl font-bold mb-4">
+          <div className="text-white md:mr-12">
+            <h2 className="text-[22px] md:text-[26px] font-bold mb-4">
               Schedule a free{" "}
               <a
                 href="/demo"
@@ -17,7 +17,7 @@ export default function Contact() {
                 Demo
               </a>
             </h2>
-            <p className="text-xl">
+            <p className="text-[14px] md:text-[16px]">
               A member of our team will get in touch with you in 12 hours.
             </p>
           </div>
@@ -28,10 +28,10 @@ export default function Contact() {
               <FiPhoneCall className="w-8 h-8" />
             </div>
             <div>
-              <div className="text-md font-medium">CALL US AT</div>
+              <div className="text-[14px] md:text-[16px] font-medium">CALL US AT</div>
               <a
                 href="tel:7187018169"
-                className="text-lg font-bold hover:text-white/90 transition-colors"
+                className="text-[16px] md:text-[18px] font-bold hover:text-white/90 transition-colors"
               >
                 718 701 8169
               </a>

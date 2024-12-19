@@ -27,11 +27,11 @@ const AboutSection = () => {
 
         {/* Content Section */}
         <div className="py-6 lg:py-8 space-y-6 lg:space-y-8 text-left">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl text-[#0a2558]">
+          <h2 className="text-2xl sm:text-3xl lg:text-[32px] text-[#002345]">
             How We're Different
           </h2>
 
-          <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
+          <p className="text-[#000000] text-[16px] sm:text-base leading-relaxed">
             Our method is unique. We build a specialized team around your distinct billing requirements,
             taking into account factors such as your specialty, patient volume, and denial rates. With
             a structured approach to revenue cycle management, each team member focuses on their area
@@ -41,7 +41,7 @@ const AboutSection = () => {
 
           <div className="border-t border-orange-400 pt-4 lg:pt-6">
             <div className="space-y-4 sm:space-y-6">
-              <h3 className="text-xl sm:text-2xl lg:text-3xl text-[#0a2558]">
+              <h3 className="text-xl sm:text-2xl lg:text-[28px] text-[#002345]">
                 Certified Medical Billing
               </h3>
 

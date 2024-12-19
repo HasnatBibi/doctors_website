@@ -51,10 +51,10 @@ export default function StatsSection() {
       <div className="grid md:grid-cols-2 gap-8 items-center">
         {/* Left Content */}
         <div className="space-y-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#002147]">
+          <h2 className="text-[28px] md:text-4xl font-bold text-[#002345]">
             Why Collaborate With BilNow
           </h2>
-          <p className="text-gray-600 leading-relaxed">
+          <p className="text-[#7A7A7A] text-[16px] leading-relaxed">
             BilNow delivers smart, data-driven medical billing solutions that
             fine-tune your revenue cycle. With automated claims processing,
             real-time reporting, and industry expertise, we ensure faster
@@ -62,7 +62,7 @@ export default function StatsSection() {
           </p>
           <div className="space-y-6" ref={ref}>
             {stats.map((stat, index) => (
-              <div key={index} className="space-y-2">
+              <div key={index} className="space-y-2 text-[16px] text-[#002345]">
                 <div className="flex justify-between text-sm font-medium">
                   <span>{stat.title}</span>
                   <span>{stat.percentage}%</span>

@@ -56,7 +56,7 @@ export default function Testimonials() {
   return (
     <section className="py-16 px-4 bg-white">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl text-center text-gray-900 mb-12">
+        <h2 className="text-[32px] text-[#002345] text-center mb-12">
           What Our Client Says
         </h2>
         
@@ -101,16 +101,16 @@ export default function Testimonials() {
               </div>
 
               {/* Quote */}
-              <p className="text-gray-700 text-lg mb-6">
+              <p className="text-[#002345] text-[16px] mb-6">
                 {testimonials[currentIndex].quote}
               </p>
 
               {/* Author */}
               <div>
-                <h4 className="font-bold text-gray-900">
+                <h4 className="font-bold text-[#002345] text-[16px]">
                   {testimonials[currentIndex].name}
                 </h4>
-                <p className="text-gray-600">
+                <p className="text-gray-600 text-[16px]">
                   {testimonials[currentIndex].role}
                 </p>
               </div>

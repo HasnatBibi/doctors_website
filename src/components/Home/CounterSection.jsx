@@ -25,10 +25,10 @@ const Counter = ({ end, label, icon, duration = 2000 }) => {
       <div className="h-24 w-24 flex justify-center items-center">
         {icon}
       </div>
-      <div className="text-4xl text-black flex justify-center items-center pt-6">
+      <div className="text-[32px] text-black flex justify-center items-center pt-6">
         {count}%
       </div>
-      <div className="mt-2 text-center text-lg text-black flex justify-center items-center">
+      <div className="mt-2 text-center text-[16px] text-black flex justify-center items-center">
         {label}
       </div>
     </div>

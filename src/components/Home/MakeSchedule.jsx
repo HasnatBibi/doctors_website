@@ -35,17 +35,17 @@ const MakeSchedule = () => {
           className="space-y-6"
         >
           {/* Short Heading */}
-          <h4 className="font-bold text-xl text-gray-700">
+          <h4 className="font-bold text-[16px] text-[#002345]">
             Make a Schedule
           </h4>
 
           {/* Main Heading */}
-          <h2 className="text-4xl font-bold text-navy-800 leading-tight">
+          <h2 className="text-[32px] font-bold text-[#121212] leading-tight">
             Transform the Billing Process <br /> with Hyperautomation
           </h2>
 
           {/* Bullet Points */}
-          <ul className="space-y-4 text-gray-600">
+          <ul className="space-y-4 text-[#333333] text-[16px]">
             <li className="flex items-center group">
               <FontAwesomeIcon
                 icon={faCheckCircle}
